@@ -1,0 +1,36 @@
+.container {
+  width: 50vh;
+  height: 50vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container h1 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.767);
+}
+.container .mat-form-field {
+  width: 15rem;
+}
+.container form {
+  display: flex;
+  flex-direction: column;
+}
+.container .submit {
+  background: none;
+  border: none;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+.container .submit {
+  color: white;
+  background-color: rgba(175, 120, 141, 0.568627451);
+}
+.container .submit:hover {
+  background-color: #af788d;
+}/*# sourceMappingURL=dialog.component.css.map */

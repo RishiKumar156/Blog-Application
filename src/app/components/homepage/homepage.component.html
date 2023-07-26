@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 [style.display]="isStyleNone ? 'none' : 'block'">BlogNexus</h1>
+  <p [style.display]="isStyleNone ? 'none' : 'block'">
+    "BlogNexus: Connecting Minds Through Words"
+  </p>
+  <div class="button">
+    <button
+      [style.display]="isStyleNone ? 'none' : ''"
+      class="item1 sign-up"
+      (click)="signup()"
+    >
+      SignUp
+    </button>
+    <button
+      [style.display]="isStyleNone ? 'none' : ''"
+      class="item1 sign-up"
+      (click)="signin()"
+    >
+      Signin
+    </button>
+  </div>
+</div>
+<router-outlet></router-outlet>

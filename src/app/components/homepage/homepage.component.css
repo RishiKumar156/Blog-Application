@@ -1,0 +1,59 @@
+.container {
+  background: linear-gradient(130deg, rgba(239, 232, 232, 0.46), rgba(0, 0, 0, 0)), url(https://images.pexels.com/photos/947202/pexels-photo-947202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container h1 {
+  padding-left: 4rem;
+  font-size: 4rem;
+  letter-spacing: 3rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+}
+.container p {
+  margin-top: 5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: white;
+  letter-spacing: 0.3rem;
+}
+.container .button {
+  margin-top: 3rem;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.container .button button {
+  margin: 1rem;
+  border: none;
+  background-color: rgba(162, 123, 140, 0.8509803922);
+  color: rgba(255, 255, 255, 0.779);
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 300;
+  width: 12.5rem;
+  height: 3rem;
+}
+.container .button button .item1 {
+  margin-left: 2rem;
+}
+.container .button button .item2 {
+  margin-right: 2rem;
+}
+.container .button button:hover {
+  background-color: #a27b8c;
+  color: black;
+  box-shadow: 0 1rem 6rem rgba(0, 0, 0, 0.6);
+}/*# sourceMappingURL=homepage.component.css.map */

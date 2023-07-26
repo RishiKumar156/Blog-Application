@@ -6,26 +6,26 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: #000000b3;
+  background-color: rgba(172, 116, 137, 0.7019607843);
   color: white;
   font-weight: 300;
   text-transform: uppercase;
-  .logo {
-    font-size: 2rem;
-    margin: 2rem;
-    margin-left: 3rem;
-  }
-  ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-right: 3rem;
-    li {
-      margin: 1rem 2rem;
-      list-style: none;
-      font-size: 1rem;
-    }
-  }
+}
+.navigation .logo {
+  font-size: 2rem;
+  margin: 2rem;
+  margin-left: 3rem;
+}
+.navigation ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 3rem;
+}
+.navigation ul li {
+  margin: 1rem 2rem;
+  list-style: none;
+  font-size: 1rem;
 }
 
 .footer {
@@ -38,4 +38,4 @@
   justify-content: center;
   align-items: center;
   bottom: 0;
-}
+}/*# sourceMappingURL=app.component.css.map */

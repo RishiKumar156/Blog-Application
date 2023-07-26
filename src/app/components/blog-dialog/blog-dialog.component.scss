@@ -1,0 +1,39 @@
+.container {
+  width: 50vh;
+  height: 70vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.767);
+  }
+  .mat-form-field {
+    width: 15rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  .submit {
+    background: none;
+    border: none;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: 300;
+    // color: rgb(79, 105, 255);
+    cursor: pointer;
+  }
+
+  .submit {
+    color: white;
+    background-color: #af788d91;
+  }
+  .submit:hover {
+    background-color: #af788d;
+  }
+}

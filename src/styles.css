@@ -8,20 +8,15 @@
 .custom-dialog-container .mat-dialog-container {
   /* add your styles */
   background: none;
-  background: linear-gradient(
-    130deg,
-    rgba(255, 255, 255, 0.13),
-    rgba(255, 255, 255, 0.1)
-  ) !important;
+  background: linear-gradient(130deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.1)) !important;
 }
-.create-blog-dialog-container .mat-dialog-container {
-  background: none !important;
-}
+
 html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+}/*# sourceMappingURL=styles.css.map */

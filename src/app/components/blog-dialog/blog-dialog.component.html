@@ -1,0 +1,59 @@
+<div class="dialog-box">
+  <div class="container">
+    <h1>Create You'r Blog</h1>
+    <form [formGroup]="formGroup" class="example-form" (ngSubmit)="onsubmit()">
+      <mat-form-field
+        appearance="fill"
+        color="primary"
+        class="example-full-width"
+      >
+        <mat-label>BlogName</mat-label>
+        <input
+          type="email"
+          matInput
+          formControlName="email"
+          placeholder="Ex : Coding Blog etc..."
+          [(ngModel)]="createNewBlog.BlogName"
+        />
+        <mat-error *ngIf="BlogName.hasError('required')"
+          >This field is <strong>required</strong></mat-error
+        >
+      </mat-form-field>
+      <mat-form-field
+        appearance="fill"
+        color="primary"
+        class="example-full-width"
+      >
+        <mat-label>BlogSubTitle</mat-label>
+        <input
+          type="email"
+          matInput
+          formControlName="email"
+          placeholder="Ex : Coding Blog etc..."
+          [(ngModel)]="createNewBlog.BlogSubTitle"
+        />
+        <mat-error *ngIf="BlogSubTitle.hasError('required')"
+          >This field is <strong>required</strong></mat-error
+        >
+      </mat-form-field>
+      <mat-form-field
+        appearance="fill"
+        color="primary"
+        class="example-full-width"
+      >
+        <mat-label>Description</mat-label>
+        <input
+          type="email"
+          matInput
+          formControlName="email"
+          placeholder="Ex : Coding Blog etc..."
+          [(ngModel)]="createNewBlog.Blogdata"
+        />
+        <mat-error *ngIf="Blogdata.hasError('required')"
+          >This field is <strong>required</strong></mat-error
+        >
+      </mat-form-field>
+      <input class="submit" type="submit" value="SUBMIT" />
+    </form>
+  </div>
+</div>
