@@ -53,6 +53,10 @@
           >This field is <strong>required</strong></mat-error
         >
       </mat-form-field>
+      <div class="upload">
+        <input type="file" (change)="onFileSelected($event)" />
+        <input type="button" value="upload" (click)="upload()" />
+      </div>
       <input class="submit" type="submit" value="SUBMIT" />
     </form>
   </div>

@@ -6,14 +6,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   h1 {
     font-size: 1.8rem;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.767);
-  }
-  .mat-form-field {
-    width: 15rem;
   }
   form {
     display: flex;
@@ -37,3 +33,4 @@
     background-color: #af788d;
   }
 }
+
