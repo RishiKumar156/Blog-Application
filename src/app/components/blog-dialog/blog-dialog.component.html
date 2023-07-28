@@ -11,11 +11,11 @@
         <input
           type="email"
           matInput
-          formControlName="email"
+          formControlName="BlogName"
           placeholder="Ex : Coding Blog etc..."
           [(ngModel)]="createNewBlog.BlogName"
         />
-        <mat-error *ngIf="BlogName.hasError('required')"
+        <mat-error *ngIf="formGroup.get('BlogName')?.hasError('required')"
           >This field is <strong>required</strong></mat-error
         >
       </mat-form-field>
@@ -26,13 +26,13 @@
       >
         <mat-label>BlogSubTitle</mat-label>
         <input
-          type="email"
+          type="text"
           matInput
-          formControlName="email"
+          formControlName="BlogSubTitle"
           placeholder="Ex : Coding Blog etc..."
           [(ngModel)]="createNewBlog.BlogSubTitle"
         />
-        <mat-error *ngIf="BlogSubTitle.hasError('required')"
+        <mat-error *ngIf="formGroup.get('BlogSubTitle')?.hasError('required')"
           >This field is <strong>required</strong></mat-error
         >
       </mat-form-field>
@@ -45,17 +45,21 @@
         <input
           type="email"
           matInput
-          formControlName="email"
+          formControlName="BlogDescription"
           placeholder="Ex : Coding Blog etc..."
-          [(ngModel)]="createNewBlog.Blogdata"
+          [(ngModel)]="createNewBlog.BlogDescription"
         />
-        <mat-error *ngIf="Blogdata.hasError('required')"
+        <mat-error
+          *ngIf="formGroup.get('BlogDescription')?.hasError('required')"
           >This field is <strong>required</strong></mat-error
         >
       </mat-form-field>
       <div class="upload">
-        <input type="file" (change)="onFileSelected($event)" />
-        <input type="button" value="upload" (click)="upload()" />
+        <input
+          type="file"
+          [(ngModel)]="createNewBlog.BlogImg"
+          (change)="onFileSelected($event)"
+        />
       </div>
       <input class="submit" type="submit" value="SUBMIT" />
     </form>
