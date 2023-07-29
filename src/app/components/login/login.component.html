@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Welcome to BlogNexus</h1>
-  <form [formGroup]="formGroup" class="example-form" (ngSubmit)="onsubmit()">
+  <form class="example-form" (ngSubmit)="onsubmit()">
     <mat-form-field
       appearance="outline"
       color="primary"
@@ -10,9 +10,10 @@
       <input
         type="email"
         matInput
-        formControlName="email"
         placeholder="Ex. xyz@gmail.com"
         [(ngModel)]="LoginUser.userEmail"
+        name="userEmail"
+        required
       />
       <mat-error
         *ngIf="
@@ -32,9 +33,10 @@
       <input
         type="password"
         matInput
-        formControlName="password"
         placeholder="you can use special characters"
         [(ngModel)]="LoginUser.userPassword"
+        name="userPassword"
+        required
       />
       <mat-error *ngIf="passwordFormControl.hasError('required')"
         >Password is <strong>required</strong></mat-error

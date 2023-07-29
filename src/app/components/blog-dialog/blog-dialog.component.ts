@@ -1,3 +1,4 @@
+import { ConnectorService } from './../connector.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {
@@ -14,10 +15,15 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./blog-dialog.component.scss'],
 })
 export class BlogDialogComponent implements OnInit {
-  blogRoute = 'PostBlog';
+  blogRoute = 'CreateBlog';
+  BlogCreatingUserGuid: any;
   selectedFile: File | null = null;
   formGroup!: FormGroup;
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private ConnectorService: ConnectorService
+  ) {}
 
   createNewBlog: any = {
     BlogName: '',
@@ -25,14 +31,7 @@ export class BlogDialogComponent implements OnInit {
     BlogDescription: '',
     BlogImg: null,
   };
-  ngOnInit(): void {
-    this.formGroup = this.formBuilder.group({
-      BlogName: ['', Validators.required],
-      BlogSubTitle: ['', Validators.required],
-      BlogDescription: ['', Validators.required],
-    });
-  }
-
+  ngOnInit(): void {}
   onFileSelected(event: any): void {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
@@ -44,6 +43,7 @@ export class BlogDialogComponent implements OnInit {
       reader.readAsDataURL(file);
     }
   }
+
   onsubmit() {
     this.http
       .post(`${environment.baseURL}/${this.blogRoute}`, this.createNewBlog)

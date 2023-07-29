@@ -1,3 +1,4 @@
+import { ConnectorService } from './../connector.service';
 import { CreateUserService } from './../../services/User/create-user.service';
 import {
   HttpClient,
@@ -16,6 +17,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  BlogCreatingUser: any;
   private LoginUserAgain = 'LoginUser';
   post: any;
   LoginUser: any = {
@@ -27,7 +29,8 @@ export class LoginComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private LoginRef: MatDialogRef<LoginComponent>,
-    private CreateUserService: CreateUserService
+    private CreateUserService: CreateUserService,
+    private ConnectorService: ConnectorService
   ) {}
   emailFormControl = new FormControl('', [
     Validators.required,
@@ -47,12 +50,14 @@ export class LoginComponent implements OnInit {
       .subscribe(
         (data) => {
           this.post = data;
-          console.log(this.post["userID"]);
+          // console.log(this.ConnectorService.DataBridge);
+          // this.BlogCreatingUser = this.post['userID'];
           if (data) {
             // console.log(data);
             this.router.navigate(['/dummy']);
             this.LoginRef.close();
           }
+          this.ConnectorService.setData(this.post['userID']);
         },
         (error: HttpErrorResponse) => {
           // Handle error response
