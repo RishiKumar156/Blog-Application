@@ -1,5 +1,5 @@
 import { ConnectorService } from './../connector.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 // import { NgModelOptions } from '@angular/forms';
 import {
@@ -8,6 +8,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -22,13 +24,16 @@ export class BlogDialogComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    public ConnectorService: ConnectorService
+    public ConnectorService: ConnectorService,
+    private router: Router,
+    private blogDialogref: MatDialogRef<BlogDialogComponent>
   ) {}
   createNewBlog: any = {
     BlogName: '',
     BlogSubTitle: '',
     BlogDescription: '',
     BlogImg: null,
+    BlogCreator: null,
   };
   BlogName = new FormControl('', [Validators.required]);
   BlogSubTitle = new FormControl('', [Validators.required]);
@@ -39,7 +44,8 @@ export class BlogDialogComponent implements OnInit {
     BlogDescription: this.BlogDescription,
   });
   ngOnInit(): void {
-    console.log(this.ConnectorService.guId);
+    this.createNewBlog.BlogCreator = sessionStorage.getItem('LoggeduserGuid');
+    console.log(this.createNewBlog.BlogCreator);
   }
   onFileSelected(event: any): void {
     if (event.target.files.length > 0) {
@@ -57,12 +63,24 @@ export class BlogDialogComponent implements OnInit {
     console.log(this.createNewBlog);
     this.http
       .post(`${environment.baseURL}/${this.blogRoute}`, this.createNewBlog)
-      .subscribe((data) => {
-        if (!data) {
-          console.log("Data haven't posted!");
-        } else {
-          console.log(data);
+      .subscribe(
+        (data) => {
+          if (!data) {
+            console.log("Data haven't posted!");
+          } else {
+            console.log(data);
+            this.router.navigate(['blogs']);
+            this.blogDialogref.close();
+          }
+        },
+        (error: HttpErrorResponse) => {
+          // Handle error response
+          if (error.status === 400) {
+            alert('You need to Signup First');
+          }
+          // console.error('Error Status:', error.status); // HTTP status code (e.g., 400, 401, etc.)
+          // console.error('Error Message:', error.message); // Error message from the server (if available)
         }
-      });
+      );
   }
 }
