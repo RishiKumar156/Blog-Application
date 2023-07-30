@@ -1,63 +1,57 @@
-<div class="dialog-box">
-  <div class="container">
-    <h1>Create Your Blog</h1>
-    <form class="example-form" (ngSubmit)="onsubmit()">
-      <mat-form-field
-        appearance="fill"
-        color="primary"
-        class="example-full-width"
-      >
-        <mat-label>BlogName</mat-label>
-        <input
-          type="email"
-          matInput
-          placeholder="Ex : Coding Blog etc..."
-          [(ngModel)]="createNewBlog.BlogName"
-        />
-        <mat-error *ngIf="!createNewBlog.BlogName"
-          >This field is <strong>required</strong></mat-error
-        >
-      </mat-form-field>
-      <mat-form-field
-        appearance="fill"
-        color="primary"
-        class="example-full-width"
-      >
-        <mat-label>BlogSubTitle</mat-label>
-        <input
-          type="text"
-          matInput
-          placeholder="Ex : Coding Blog etc..."
-          [(ngModel)]="createNewBlog.BlogSubTitle"
-        />
-        <mat-error *ngIf="!createNewBlog.BlogSubTitle"
-          >This field is <strong>required</strong></mat-error
-        >
-      </mat-form-field>
-      <mat-form-field
-        appearance="fill"
-        color="primary"
-        class="example-full-width"
-      >
-        <mat-label>Description</mat-label>
-        <input
-          type="email"
-          matInput
-          placeholder="Ex : Coding Blog etc..."
-          [(ngModel)]="createNewBlog.BlogDescription"
-        />
-        <mat-error *ngIf="!createNewBlog.BlogDescription"
-          >This field is <strong>required</strong></mat-error
-        >
-      </mat-form-field>
-      <div class="upload">
-        <input
-          type="file"
-          [(ngModel)]="createNewBlog.BlogImg"
-          (change)="onFileSelected($event)"
-        />
-      </div>
-      <input class="submit" type="submit" value="SUBMIT" />
-    </form>
-  </div>
+<div class="container">
+  <h1>Welcome to BlogNexus</h1>
+  <form class="example-form" (ngSubmit)="onsubmit()">
+    <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>Blog Name</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Ex : Blog theme"
+        [(ngModel)]="createNewBlog.BlogName"
+        required
+        name="text"
+      />
+      <mat-error *ngIf="!BlogName.hasError('required')">
+        This is an required field
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>BlogSubTitle</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Ex. Sample Title"
+        [(ngModel)]="createNewBlog.BlogSubTitle"
+        required
+        name="text"
+      />
+      <mat-error *ngIf="!BlogSubTitle.hasError('required')">
+        This is an required field
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>BlogDescription</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Ex. Sample Title"
+        [(ngModel)]="createNewBlog.BlogDescription"
+        required
+        name="text"
+      />
+      <mat-error *ngIf="!BlogDescription.hasError('required')">
+        This is an required field
+      </mat-error>
+    </mat-form-field>
+    <div class="upload">
+      <input
+        type="file"
+        [(ngModel)]="createNewBlog.BlogImg"
+        (change)="onFileSelected($event)"
+      />
+    </div>
+    <input class="submit" type="submit" value="SUBMIT" />
+  </form>
 </div>

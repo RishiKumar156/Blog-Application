@@ -1,4 +1,4 @@
-import { CreateUserService } from './../../services/User/create-user.service';
+import { CreateUserService } from '../../services/User/create-user.service';
 import { Component, OnInit } from '@angular/core';
 import { NewUser } from 'src/app/model/createUser';
 

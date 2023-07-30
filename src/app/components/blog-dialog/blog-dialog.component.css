@@ -1,6 +1,6 @@
 .container {
   width: 50vh;
-  height: 50vh;
+  height: 70vh;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,9 @@
   font-size: 1.8rem;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.767);
+}
+.container .mat-form-field {
+  width: auto;
 }
 .container form {
   display: flex;
@@ -30,4 +33,4 @@
 }
 .container .submit:hover {
   background-color: #af788d;
-}/*# sourceMappingURL=dialog.component.css.map */
+}/*# sourceMappingURL=blog-dialog.component.css.map */

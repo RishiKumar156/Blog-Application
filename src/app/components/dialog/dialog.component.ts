@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { CreateUserService } from './../../services/User/create-user.service';
+import { CreateUserService } from '../../services/User/create-user.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   FormBuilder,

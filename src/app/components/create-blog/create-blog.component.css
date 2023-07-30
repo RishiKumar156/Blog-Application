@@ -1,0 +1,18 @@
+.container {
+  padding-top: 4rem;
+  background: linear-gradient(130deg, rgba(239, 232, 232, 0.203), rgba(0, 0, 0, 0.285)), url(https://images.pexels.com/photos/3213357/pexels-photo-3213357.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.container h1 {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.765);
+}
+.container .holder .item {
+  display: flex;
+}/*# sourceMappingURL=create-blog.component.css.map */

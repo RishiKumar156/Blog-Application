@@ -1,11 +1,11 @@
 import { ConnectorService } from './../connector.service';
-import { CreateUserService } from './../../services/User/create-user.service';
+// import { CreateUserService } from '../../services/User/create-user.service';
 import {
   HttpClient,
   HttpErrorResponse,
   HttpResponse,
 } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -17,19 +17,18 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  BlogCreatingUser: any;
   private LoginUserAgain = 'LoginUser';
   post: any;
   LoginUser: any = {
     userEmail: '',
     userPassword: '',
   };
+
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router,
     private LoginRef: MatDialogRef<LoginComponent>,
-    private CreateUserService: CreateUserService,
     private ConnectorService: ConnectorService
   ) {}
   emailFormControl = new FormControl('', [
@@ -50,14 +49,15 @@ export class LoginComponent implements OnInit {
       .subscribe(
         (data) => {
           this.post = data;
-          // console.log(this.ConnectorService.DataBridge);
-          // this.BlogCreatingUser = this.post['userID'];
+          const BlogCreatingUserGuid = this.post['userID'];
           if (data) {
-            // console.log(data);
+            this.ConnectorService.sharedData = this.LoginUser.userEmail;
             this.router.navigate(['/dummy']);
             this.LoginRef.close();
+            // this.ConnectorService.guId = this.post['userID'];
+            sessionStorage.setItem('LoggeduserGuid', this.post['userID']);
           }
-          this.ConnectorService.setData(this.post['userID']);
+          // console.log(this.ConnectorService.setData(this.post['userID']));
         },
         (error: HttpErrorResponse) => {
           // Handle error response

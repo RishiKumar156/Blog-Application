@@ -9,9 +9,10 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class CreateUserService {
+  @Injectable()
   private userUrl = 'NewlyCreatedUser';
   private registerNewUser = 'RegisterNewUser';
-  
+
   authenticated: boolean = false;
   constructor(private http: HttpClient) {}
 

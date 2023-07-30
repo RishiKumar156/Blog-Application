@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreateBlogComponent } from './components/create-blog/create-blog.component';
 import { LoginComponent } from './components/login/login.component';
 import { BlogDialogComponent } from './components/blog-dialog/blog-dialog.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { BlogDialogComponent } from './components/blog-dialog/blog-dialog.compon
     CreateBlogComponent,
     LoginComponent,
     BlogDialogComponent,
+    BlogsComponent,
   ],
   imports: [
     BrowserModule,
